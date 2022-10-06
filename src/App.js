@@ -6,11 +6,11 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 
 //Components
-import Search from "./components/Search/Search";
+//import Search from "./components/Search/Search";
 import Card from "./components/Card/Card";
-import Pagination from "./components/Pagination/Pagination";
-import Filter from "./components/Filter/Filter";
-import Navbar from "./components/Navbar/Navbar";
+//import Pagination from "./components/Pagination/Pagination";
+//import Filter from "./components/Filter/Filter";
+//import Navbar from "./components/Navbar/Navbar";
 
 
 
