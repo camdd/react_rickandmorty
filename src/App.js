@@ -6,9 +6,9 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 
 //Components
-//import Search from "./components/Search/Search";
+import Search from "./components/Search/Search";
 import Card from "./components/Card/Card";
-//import Pagination from "./components/Pagination/Pagination";
+import Pagination from "./components/Pagination/Pagination";
 //import Filter from "./components/Filter/Filter";
 //import Navbar from "./components/Navbar/Navbar";
 
@@ -18,8 +18,10 @@ function App() {
 
   let [fetchedData, updateFetchedData] = useState([]);
   let {  info,  results } = fetchedData;
-
-  let api = `https://rickandmortyapi.com/api/character/?page=1`
+  let [pageNumber, updatePageNumber] = useState(1);
+  let [search, setSearch] = useState("");
+  //let api = `https://rickandmortyapi.com/api/character/?page=1`
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
 
   useEffect(() => {
@@ -33,6 +35,7 @@ function App() {
     
       <div className="App">
         <h1 className="text-center mb-3">Characters</h1>
+        <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
           <div className="container">
             <div className="row">
               Filter 
@@ -43,6 +46,7 @@ function App() {
               </div>
             </div>
           </div>
+          <Pagination info={info} pageNumber={pageNumber} updatePageNumber={updatePageNumber} />
       </div>
   )
 }
