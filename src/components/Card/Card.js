@@ -10,6 +10,7 @@ const Card = ({ page, results }) => {
         let { id, image, name, status, location } = x;
       
           return (
+            
             <div className={`${styles.card} d-flex flex-column justify-content-center`}>
             <img className={`${styles.img} img-fluid`} src={image} alt="" />
             <div className={`${styles.content}`}>

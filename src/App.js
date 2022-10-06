@@ -17,7 +17,7 @@ import Card from "./components/Card/Card";
 function App() {
 
   let [fetchedData, updateFetchedData] = useState([]);
-  let { info, results } = fetchedData;
+  let { /* info, */ results } = fetchedData;
 
   let api = `https://rickandmortyapi.com/api/character/?page=1`
 
@@ -39,7 +39,7 @@ function App() {
               Filter component will be placed here
               <div className="col-lg-8 col-12">
                 <div className="row">
-                <Card page="/" results={results} />
+                <Card /* page="/" */ results={results} />
                 </div>
               </div>
             </div>
