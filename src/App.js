@@ -15,8 +15,9 @@ import Navbar from "./components/Navbar/Navbar";
 
 
 function App() {
-  let { info, results } = fetchedData;
+
   let [fetchedData, updateFetchedData] = useState([]);
+  let { info, results } = fetchedData;
 
   let api = `https://rickandmortyapi.com/api/character/?page=1`
 
