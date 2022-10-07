@@ -25,6 +25,10 @@ const Filter = ({
         className="text-primary text-decoration-underline text-center mb-3"
         > Clear Filters </div>
         <div className="accordion" id="accordionExample">
+        <Status
+            updatePageNumber={updatePageNumber}
+            updateStatus={updateStatus}
+        />
         {/* Category components will be placed here */}
         </div>
     </div>
