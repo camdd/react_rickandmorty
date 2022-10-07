@@ -4,16 +4,19 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap"
 import './App.css'
 
-
 import React, { useState, useEffect } from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
 
 //Components
 import Search from "./components/Search/Search"
 import Card from "./components/Card/Card"
+import CardDetails from "./components/Card/CardDetails";
 import Pagination from "./components/Pagination/Pagination"
 import Filter from "./components/Filter/Filter"
+
+//navbar
 import Navbar from "./components/Navbar/Navbar"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Episodes from "./Pages/Episodes"
 import Location from "./Pages/Location"
 
@@ -22,7 +25,9 @@ import Location from "./Pages/Location"
 function App() {
 
   const Home = () => {
-    let [fetchedData, updateFetchedData] = useState([])
+    // Everything you've written so far
+  }
+  let [fetchedData, updateFetchedData] = useState([])
   let {  info,  results } = fetchedData
   let [pageNumber, updatePageNumber] = useState(1)
   let [search, setSearch] = useState("")
@@ -65,9 +70,6 @@ function App() {
           <Pagination info={info} pageNumber={pageNumber} updatePageNumber={updatePageNumber} />
       </div>
   )
-    // Everything you've written so far
-  }
-  
 }
 
 export default App
