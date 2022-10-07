@@ -9,6 +9,7 @@ import React, { useState, useEffect } from "react"
 //Components
 import Search from "./components/Search/Search"
 import Card from "./components/Card/Card"
+import CardDetails from "./components/Card/CardDetails";
 import Pagination from "./components/Pagination/Pagination"
 import Filter from "./components/Filter/Filter"
 
@@ -27,10 +28,13 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<CardDetails />} />
 
           <Route path="/episodes" element={<Episodes />} />
+          <Route path="/episodes/:id" element={<CardDetails />} />
 
           <Route path="/location" element={<Location />} />
+          <Route path="/location/:id" element={<CardDetails />} />
         </Routes>
       </Router>
     );
