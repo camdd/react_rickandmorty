@@ -12,7 +12,7 @@ const Card = ({ page, results }) => {
 
 /*         Hmmm i had my key={id} in my <Link> tag but i kept having this error. i changed the key to the <BrowserRouter> tag and it worked, but im not sure why */
         return (
-          <BrowserRouter key={id}> 
+          <div key={id}> 
           <Link
             style={{ textDecoration: "none" }}
             to={`${page}${id}`}
@@ -55,7 +55,7 @@ const Card = ({ page, results }) => {
             }
           })()} 
           </Link>
-          </BrowserRouter>
+          </div>
         )
         
       })

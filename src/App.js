@@ -10,11 +10,10 @@ import React, { useState, useEffect } from "react"
 //Components
 import Search from "./components/Search/Search"
 import Card from "./components/Card/Card"
-import CardDetails from "./components/Card/CardDetails";
 import Pagination from "./components/Pagination/Pagination"
 import Filter from "./components/Filter/Filter"
 
-//navbar
+
 import Navbar from "./components/Navbar/Navbar"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Episodes from "./Pages/Episodes"
@@ -23,11 +22,24 @@ import Location from "./Pages/Location"
 
 
 function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+  <Route path="/" element={<Home />} />
+
+  <Route path="/episodes" element={<Episodes />} />
+
+  <Route path="/location" element={<Location />} />
+</Routes>
+    </Router>
+  );
+}
 
   const Home = () => {
-    // Everything you've written so far
-  }
-  let [fetchedData, updateFetchedData] = useState([])
+    let [fetchedData, updateFetchedData] = useState([])
   let {  info,  results } = fetchedData
   let [pageNumber, updatePageNumber] = useState(1)
   let [search, setSearch] = useState("")
@@ -71,6 +83,9 @@ function App() {
       </div>
   )
 }
+  
+
+  
 
 export default App
 
