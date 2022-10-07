@@ -1,11 +1,13 @@
+import styles from "./Filter.module.scss"
+
 const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
     return (
     <div>
       <style jsx="">
         {`
           .x:checked + label {
-            background-color: #0b5ed7;
-            color: white }
+            background-color: #F7F6DC;
+            color: #7FB77E }
           input[type="radio"] { display: none; }
         `}
       </style>
@@ -19,7 +21,7 @@ const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
             onClick={(x) => {
                 task(input); updatePageNumber(1);
             }}
-        className="btn btn-outline-primary"
+        className={`${styles.btn} btn`}
         htmlFor={`${name}-${index}`}
         > {input} 
         </label>

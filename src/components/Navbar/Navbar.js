@@ -1,13 +1,16 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import "../../App.css";
+import { NavLink, Link } from "react-router-dom"
+import "../../App.css"
+import logo from './ricknmorty.png'
+import styles from "./Navbar.module.scss"
 
 const Navbar = () => {
 return (
     <nav className="navbar navbar-expand-lg     navbar-light bg-light mb-4">
         <div className="container">
             <Link to="/" className="navbar-brand fs-3 ubuntu">
-                Rick & Morty <span className="text-primary"></span>
+                <img className={styles.logo} src={logo} alt="..."/>
+                <span className="text-primary"></span>
             </Link>
             <style jsx="">{`
                 button[aria-expanded="false"] > .close {

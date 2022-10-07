@@ -2,6 +2,8 @@ import React from "react"
 import Gender from "./category/Gender"
 import Species from "./category/Species"
 import Status from "./category/Status"
+import styles from "./Filter.module.scss"
+
 
 const Filter = ({
     pageNumber, updatePageNumber,
@@ -24,8 +26,9 @@ const Filter = ({
         style={{ cursor: "pointer" }} onClick={clear}
         className="text-primary text-decoration-underline text-center mb-3"
         > Clear Filters </div>
-        <div className="accordion" id="accordionExample">
-        <Status
+        <div className={`${styles.accordion} accordion`}id="accordionExample">
+        <Status 
+            className={`${styles.status}`}
             updatePageNumber={updatePageNumber}
             updateStatus={updateStatus}
         />

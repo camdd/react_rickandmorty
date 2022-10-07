@@ -1,5 +1,6 @@
 .active {
-    color: #0b5ed7 !important;
-    font-weight: bold;
-    border-bottom: 3px solid #0b5ed7;
+    font-family: 'Montserrat', sans-serif;
+    color: #7FB77E !important;
+    font-weight: 600;
+    border-bottom: 3px solid #7FB77E;
   }
