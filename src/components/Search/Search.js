@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./Search.module.scss";
+import React from "react"
+import styles from "./Search.module.scss"
 
 const Search = ({ setSearch, updatePageNumber }) => {
   let searchBtn = (e) => {
-    e.preventDefault();
+    e.preventDefault()
   };
   return (
     <form
@@ -12,7 +12,7 @@ const Search = ({ setSearch, updatePageNumber }) => {
         }} placeholder="Search for characters" className={styles.input} type="text" />
         <button onClick={searchBtn} className={`${styles.btn} btn btn-primary fs-5`}> Search </button>
     </form>
-  );
-};
+  )
+}
 
 export default Search

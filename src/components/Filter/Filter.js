@@ -10,12 +10,12 @@ const Filter = ({
   }) => {
   
     let clear = () => {
-        updateStatus("");
-        updateGender("");
-        updateSpecies("");
-        updatePageNumber(1);
-        window.location.reload(false);
-      };
+        updateStatus("")
+        updateGender("")
+        updateSpecies("")
+        updatePageNumber(1)
+        window.location.reload(false)
+      }
 
     return (
     <div className="col-lg-3 col-12 mb-5">
@@ -40,6 +40,6 @@ const Filter = ({
         
         </div>
     </div>
-    );
-    };
+    )
+    }
 export default Filter

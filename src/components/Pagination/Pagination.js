@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
+import React, { useState, useEffect } from "react"
+import ReactPaginate from "react-paginate"
 
 const Pagination = ({ pageNumber, info, updatePageNumber }) => {
     let pageChange = (data) => {
-        updatePageNumber(data.selected + 1);
-      };
+        updatePageNumber(data.selected + 1)
+      }
 
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState(window.innerWidth)
     const updateDimensions = () => {
-        setWidth(window.innerWidth);
-    };
+        setWidth(window.innerWidth)
+    }
 
     useEffect(() => {
-        window.addEventListener("resize", updateDimensions);
-        return () => window.removeEventListener("resize", updateDimensions);
-    }, []);
+        window.addEventListener("resize", updateDimensions)
+        return () => window.removeEventListener("resize", updateDimensions)
+    }, [])
 
     return (
         <>
@@ -52,7 +52,7 @@ const Pagination = ({ pageNumber, info, updatePageNumber }) => {
             
         />
         </>
-    );
+    )
 }
 
 export default Pagination

@@ -1,13 +1,13 @@
-import React from "react";
-import styles from "./Card.module.scss";
-import { Link, BrowserRouter } from "react-router-dom";
+import React from "react"
+import styles from "./Card.module.scss"
+import { Link, BrowserRouter } from "react-router-dom"
 
 const Card = ({ page, results }) => {
-    let display;
+    let display
 
     if (results) {
       display = results.map((x) => {
-        let { id, image, name, status, location } = x;
+        let { id, image, name, status, location } = x
       
 
 /*         Hmmm i had my key={id} in my <Link> tag but i kept having this error. i changed the key to the <BrowserRouter> tag and it worked, but im not sure why */
@@ -56,9 +56,9 @@ const Card = ({ page, results }) => {
           })()} 
           </Link>
           </BrowserRouter>
-        );
+        )
         
-      });
+      })
       
       } else {
         display = "No characters found"

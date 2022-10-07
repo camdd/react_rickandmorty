@@ -1,43 +1,43 @@
 
 //Styles
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap";
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap"
+import './App.css'
 
 
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 //Components
-import Search from "./components/Search/Search";
-import Card from "./components/Card/Card";
-import Pagination from "./components/Pagination/Pagination";
-import Filter from "./components/Filter/Filter";
-import Episodes from "./Pages/Episodes";
-import Location from "./Pages/Location";
-//import Navbar from "./components/Navbar/Navbar";
+import Search from "./components/Search/Search"
+import Card from "./components/Card/Card"
+import Pagination from "./components/Pagination/Pagination"
+import Filter from "./components/Filter/Filter"
+import Navbar from "./components/Navbar/Navbar"
+import Episodes from "./Pages/Episodes"
+import Location from "./Pages/Location"
 
 
 
 function App() {
 
   
-  let [fetchedData, updateFetchedData] = useState([]);
-  let {  info,  results } = fetchedData;
-  let [pageNumber, updatePageNumber] = useState(1);
-  let [search, setSearch] = useState("");
-  let [status, updateStatus] = useState("");
-  let [gender, updateGender] = useState("");
-  let [species, updateSpecies] = useState("");
+  let [fetchedData, updateFetchedData] = useState([])
+  let {  info,  results } = fetchedData
+  let [pageNumber, updatePageNumber] = useState(1)
+  let [search, setSearch] = useState("")
+  let [status, updateStatus] = useState("")
+  let [gender, updateGender] = useState("")
+  let [species, updateSpecies] = useState("")
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`
 
 
   useEffect(() => {
     (async function () {
-      let data = await fetch(api).then((res) => res.json());
-      updateFetchedData(data);
-    })();
+      let data = await fetch(api).then((res) => res.json())
+      updateFetchedData(data)
+    })()
   }, [api])
   
   return (
@@ -67,5 +67,5 @@ function App() {
   )
 }
 
-export default App;
+export default App
 
