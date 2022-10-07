@@ -6,41 +6,39 @@ import './App.css'
 
 import React, { useState, useEffect } from "react"
 
-
 //Components
 import Search from "./components/Search/Search"
 import Card from "./components/Card/Card"
 import Pagination from "./components/Pagination/Pagination"
 import Filter from "./components/Filter/Filter"
 
-
+//Nav
 import Navbar from "./components/Navbar/Navbar"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Episodes from "./Pages/Episodes"
 import Location from "./Pages/Location"
 
 
-
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Navbar />
-      </div>
-      <Routes>
-  <Route path="/" element={<Home />} />
+    return (
+      <Router>
+        <div className="App">
+          <Navbar />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-  <Route path="/episodes" element={<Episodes />} />
+          <Route path="/episodes" element={<Episodes />} />
 
-  <Route path="/location" element={<Location />} />
-</Routes>
-    </Router>
-  );
-}
+          <Route path="/location" element={<Location />} />
+        </Routes>
+      </Router>
+    );
+  }
 
   const Home = () => {
-    let [fetchedData, updateFetchedData] = useState([])
-  let {  info,  results } = fetchedData
+  let [fetchedData, updateFetchedData] = useState([])
+  let { info,  results } = fetchedData
   let [pageNumber, updatePageNumber] = useState(1)
   let [search, setSearch] = useState("")
   let [status, updateStatus] = useState("")
@@ -48,7 +46,6 @@ function App() {
   let [species, updateSpecies] = useState("")
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`
-
 
   useEffect(() => {
     (async function () {
@@ -58,9 +55,8 @@ function App() {
   }, [api])
   
   return (
-    
-      <div className="App">
-        <h1 className="text-center mb-3">Characters</h1>
+    <div className="App">
+      <h1 className="text-center mb-3">Characters</h1>
         <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
           <div className="container">
             <div className="row">
@@ -74,18 +70,17 @@ function App() {
               /> 
               <div className="col-lg-8 col-12">
                 <div className="row">
-                <Card /* page="/" */ results={results} />
+                <Card page="/" results={results} />
                 </div>
               </div>
             </div>
           </div>
-          <Pagination info={info} pageNumber={pageNumber} updatePageNumber={updatePageNumber} />
-      </div>
+        <Pagination info={info} pageNumber={pageNumber} updatePageNumber={updatePageNumber} />
+    </div>
   )
 }
   
 
   
-
 export default App
 

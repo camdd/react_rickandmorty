@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./Card.module.scss"
-import { Link, BrowserRouter } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Card = ({ page, results }) => {
     let display
@@ -8,17 +8,14 @@ const Card = ({ page, results }) => {
     if (results) {
       display = results.map((x) => {
         let { id, image, name, status, location } = x
-      
-
-/*         Hmmm i had my key={id} in my <Link> tag but i kept having this error. i changed the key to the <BrowserRouter> tag and it worked, but im not sure why */
+        /* Hmmm i had the key prop in my <Link> tag but i kept having this error: Each child in a list should have a unique "key" prop. fixed => it was because my key prop wasn't inside the outermost returned element*/
         return (
-          <div key={id}> 
-          <Link
+           
+          <Link 
             style={{ textDecoration: "none" }}
             to={`${page}${id}`}
-            
+            key={id}
             className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark">
-
 
             <div className={`${styles.card} d-flex flex-column justify-content-center`}>
             <img className={`${styles.img} img-fluid`} src={image} alt="" />
@@ -55,7 +52,7 @@ const Card = ({ page, results }) => {
             }
           })()} 
           </Link>
-          </div>
+          
         )
         
       })
