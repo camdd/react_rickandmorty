@@ -21,8 +21,8 @@ import Location from "./Pages/Location"
 
 function App() {
 
-  
-  let [fetchedData, updateFetchedData] = useState([])
+  const Home = () => {
+    let [fetchedData, updateFetchedData] = useState([])
   let {  info,  results } = fetchedData
   let [pageNumber, updatePageNumber] = useState(1)
   let [search, setSearch] = useState("")
@@ -65,6 +65,9 @@ function App() {
           <Pagination info={info} pageNumber={pageNumber} updatePageNumber={updatePageNumber} />
       </div>
   )
+    // Everything you've written so far
+  }
+  
 }
 
 export default App
