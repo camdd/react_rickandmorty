@@ -29,6 +29,10 @@ const Filter = ({
             updatePageNumber={updatePageNumber}
             updateStatus={updateStatus}
         />
+        <Species
+            updatePageNumber={updatePageNumber}
+            updateSpecies={updateSpecies}
+        />
         {/* Category components will be placed here */}
         </div>
     </div>
