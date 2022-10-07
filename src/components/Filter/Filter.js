@@ -33,7 +33,11 @@ const Filter = ({
             updatePageNumber={updatePageNumber}
             updateSpecies={updateSpecies}
         />
-        {/* Category components will be placed here */}
+        <Gender
+            updatePageNumber={updatePageNumber}
+            updateGender={updateGender}
+        />
+        
         </div>
     </div>
     );
